@@ -1,0 +1,52 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+{% block head %}
+<nav class="navbar navbar-expand-sm bg-info navbar-dark 
+    justify-content-center">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+            <a class="nav-link" href="/">BACK</a>
+    </li>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        
+             <li class="nav-item">
+               <a class="nav-link" href="/login/">LOGIN</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/register/">SIGNUP</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/adminlogin/">ADMINLOGIN</a>
+             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="/dashboard/">DASHBOARD</a>
+            </li>
+   
+           </ul> 
+    </nav>
+ {% endblock %}
+{% block content %}
+<br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr> 
+      <th scope="col">Number of users</th>
+      <th scope="col">Number of verified books</th>
+      <th scope="col">Number of Books</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% csrf_token %}
+    <tr>
+      <th scope="row">{{nu}}</th>
+      <td>{{nv}}</td>
+      <td>{{nb}}</td>
+    </tr>    
+  </tbody>
+</table>
+
+<link rel="stylesheet" href="{% static 'css/b1.css' %}">
+<!-- <a href="/" class="btn btn-info" role="button">Back</a> -->
+{% endblock %}

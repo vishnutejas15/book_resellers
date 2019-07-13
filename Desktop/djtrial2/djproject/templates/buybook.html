@@ -1,0 +1,45 @@
+{% extends "base\layout.html" %}
+{% load static %}
+{% block content %}
+
+{% if result %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th> 
+      <th scope="col">Book Name</th>
+      <th scope="col">Owner Name</th>
+      <th scope="col">Selling Price</th>
+      <th scope="col">Original Price</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    {% for r in result %}
+    
+        {% if r.verified %}
+        <tr>
+      <th scope="row">{{r.id}}</th>
+      <th>{{r.book_name}}</th>
+      <td>{{r.ownername}}</td>
+      <td>{{r.selling_price}}</td>
+      <td>{{r.original_price}}</td>
+      <td>{{r.ph_num}}</td>
+ 
+      <td>
+           <!-- <div class="col-sm-6"><a href="/buy/{{r.id}}" class="btn btn-primary">buy</a></div> -->
+        <a href="/buy/{{r.id}}" class="btn btn-info" role="button">BUY</a>
+     </td>
+    </tr>
+       {%endif%}    
+    {% endfor %}
+  </tbody>
+</table>
+</form>
+
+{% endif %}
+{% endblock %}

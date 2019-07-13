@@ -1,0 +1,37 @@
+{% extends "base\layout.html" %}
+{% load static %}
+{% block content %}
+  {% if result %}
+  <table class="table table-secondary table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Book Name</th>
+        <th scope="col">Owner Name</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Original Price</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>  
+    <tbody>
+        <form method="POST">
+            {% csrf_token %}
+        <tr>
+          <td scope="row">{{result.book_name}}</td>
+          <td>{{result.ownername}}</td>
+          <td>{{result.selling_price}}</td>
+          <td>{{result.original_price}}</td>
+          <td>{{result.ph_num}}</td>
+          <td>{{result.address}}</td>
+        </tr> 
+    </tbody>
+  </table>
+  <pre><p style="color: red">Get The Password From The Owner By Contacting Above Phone Number</p></pre>
+  <h6>ENTER THE BOOKPASSWORD TO BUY THIS BOOK(get password from book owner)</h6>
+<input type="password" name="password">
+<input type="submit" value="SUBMIT">
+<a href="/buybook" class="btn btn-info" role="button">Back</a>
+</form>
+  {% endif %}
+{% endblock %}
+

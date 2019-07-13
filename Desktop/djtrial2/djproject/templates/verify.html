@@ -1,0 +1,68 @@
+{% extends "base\layout.html" %}
+{% load static %}
+{% block head %}
+<nav class="navbar navbar-expand-sm bg-info navbar-dark 
+    justify-content-center">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+            <a class="nav-link" href="/adminlogin">BACK</a>
+    </li>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        
+             <li class="nav-item">
+               <a class="nav-link" href="/login/">LOGIN</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/register/">SIGNUP</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/adminlogin/">ADMINLOGIN</a>
+             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="/dashboard/">DASHBOARD</a>
+            </li>
+   
+           </ul> 
+    </nav>
+    {% endblock %}
+{% block content %}
+<br><br>
+{% if result %}
+<table class="table table-responsive">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th> 
+      <th scope="col">bookname</th>
+      <th scope="col">ownername</th>
+      <th scope="col">sellingprice</th>
+      <th scope="col">originalprice</th>
+      <th scope="col">phonenumbet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <form method="POST">
+        {% csrf_token %}
+    {% for r in result %}
+    <tr>
+      <th scope="row">{{r.id}}</th>
+      <th>{{r.book_name}}</th>
+      <td>{{r.ownername}}</td>
+      <td>{{r.selling_price}}</td>
+      <td>{{r.original_price}}</td>
+      <td>{{r.ph_num}}</td>
+      <td>
+            <input type="checkbox" name="{{r.id}}" {% if r.verified %} checked {%endif%}>
+     </td>
+    </tr>    
+    {% endfor %}
+  </tbody>
+</table>
+<input type="submit" value="verified">
+</form>
+
+{% endif %}
+
+<link rel="stylesheet" href="{% static 'css/b1.css' %}">
+{% endblock %}

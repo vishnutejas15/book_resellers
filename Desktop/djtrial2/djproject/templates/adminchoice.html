@@ -1,0 +1,46 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+{% block head %}
+<nav class="navbar navbar-expand-sm bg-info navbar-dark 
+    justify-content-center">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+            <a class="nav-link" href="/adminlogin">BACK</a>
+    </li>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        
+             <li class="nav-item">
+               <a class="nav-link" href="/login/">LOGIN</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/register/">SIGNUP</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/adminlogin/">ADMINLOGIN</a>
+             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="/dashboard/">DASHBOARD</a>
+            </li>
+   
+           </ul> 
+    </nav>
+ {% endblock %}
+{% block content %}
+
+<div class="h-100">
+    <pre>
+<center>
+<br><br><br><br><br>   
+                                                         <a href="/verify" class="btn btn-info" role="button">VERIFY</a>
+<br><br><br><br><br>  
+                                                         <a href="/delete" class="btn btn-info" role="button">DELETE</a>
+<!-- <br><br><br><br><br>      
+<a href="/" class="btn btn-info" role="button">Back</a>  -->
+</center>    
+</pre>
+
+<link rel="stylesheet" href="{% static 'css/b1.css' %}">
+
+{% endblock %}

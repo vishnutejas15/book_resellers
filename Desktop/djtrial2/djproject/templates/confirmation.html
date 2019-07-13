@@ -1,0 +1,30 @@
+{% if result %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr> 
+      <th scope="col">bookname</th>
+      <th scope="col">ownername</th>
+      <th scope="col">sellingprice</th>
+      <th scope="col">originalprice</th>
+      <th scope="col">phonenumber</th>
+      <th scope="col">address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <form method="POST">
+        {% csrf_token %}
+    <tr>
+      <th scope="row">{{result.book_name}}</th>
+      <td>{{result.ownername}}</td>
+      <td>{{result.selling_price}}</td>
+      <td>{{result.original_price}}</td>
+      <td>{{result.ph_num}}</td>
+      <th>{{result.address}}</th>
+    </tr>    
+  </tbody>
+</table>
+<h4>ENTER THE BOOKPASSWORD TO BUY THIS BOOK(get password from book owner)</h4>
+<input type="password" name="password">
+<input type="submit" value="SUBMIT">
+</form>
+{% endif %}

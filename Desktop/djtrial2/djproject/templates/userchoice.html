@@ -1,0 +1,48 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+{% block head %}
+<nav class="navbar navbar-expand-sm bg-info navbar-dark 
+    justify-content-center">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+            <a class="nav-link" href="/login">BACK</a>
+    </li>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        
+             <li class="nav-item">
+               <a class="nav-link" href="login/">LOGIN</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="register/">SIGNUP</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="adminlogin/">ADMINLOGIN</a>
+             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="dashboard/">DASHBOARD</a>
+            </li>
+   
+           </ul> 
+    </nav>
+    {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/b1.css' %}">
+{% csrf_token %}
+
+<div class="h-100">
+<center>
+<br><br><br><br><br><br>  
+<pre> 
+         <a href="/sellbook" class="btn btn-info" role="button">SELL BOOK</a>
+<br><br><br><br><br><br>    
+         <a href="/buybook" class="btn btn-info" role="button">BUY BOOK</a> 
+<br><br><br><br><br><br>
+<!-- <a href="/login" class="btn btn-info" role="button">Back</a> -->
+</pre>
+  
+</center>     
+
+
+{% endblock %}
